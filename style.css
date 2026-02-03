@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap');
+
+/* Variables */
+:root {
+    --primary-maroon: #652130;
+    --primary-gold: #C9A872;
+    --text-color: #575757;
+    --heading-font: 'Oswald', sans-serif;
+    --body-font: "Gelasio", serif;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Header Styling */
+.main-header {
+    background-color: var(--primary-maroon);
+    /* min-height: 200px; */
+    /* padding-bottom: 50px;  */
+}
+
+/* Logo Text Simulation */
+.logo {
+    color: white;
+    line-height: 1;
+}
+.logo img {
+    max-width: 250px;
+}
+
+/* Button & Socials */
+.btn-donate {
+    background-color: #fff;
+    color: var(--primary-gold);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-donate:hover {
+    transform: scale(1.05);
+    background-color: #f8f8f8;
+    color: var(--primary-gold);
+}
+
+.social-icons a {
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Hero Section / Overlap Logic */
+.hero-content {
+    /* margin-top: -80px; Pull content up to overlap */
+}
+
+.main-heading {
+    font-family: var(--heading-font);
+    color: var(--primary-gold);
+    font-size: 3.8vw;
+    max-width: 35vw;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.body-text {
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+/* Image Wrapper */
+.image-box {
+    /* background-color: var(--primary-gold); */
+    /* border-radius: 120px;  */
+    /* padding: 15px 15px 0 15px; */
+    display: inline-block;
+    /* border: 8px solid white; */
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+    overflow: hidden;
+    margin-top: -103px;
+}
+
+.image-box img {
+    border-radius: 100px 100px 0 0;
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .main-header {
+        min-height: auto;
+        padding-bottom: 120px;
+    }
+    
+    .hero-content {
+        margin-top: 20px;
+    }
+    
+    .main-heading {
+        font-size: 2rem;
+        max-width: unset;
+        text-align: center;
+        margin-top: 0px;
+    }
+    
+    .body-text {
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .image-box {
+        /* border-radius: 80px; */
+        margin-top: -130px;
+    }
+}
+
+
+/* Form Section Styling */
+.form-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.form-box-container {
+    border: 1.5px solid #E5E5E5;
+    border-radius: 60px;
+    padding: 60px 50px 0px 50px;
+    margin-top: 30px;
+}
+
+.form-title {
+    font-family: var(--heading-font);
+    color: var(--primary-gold);
+    background-color: #fff;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+    font-size: 2.2rem;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Custom Text Inputs (Underlined style) */
+.form-label-custom {
+    color: #888;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control-custom {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    padding: 5px 0;
+    background: transparent;
+    outline: none;
+    font-family: var(--body-font);
+}
+
+.form-control-custom:focus {
+    border-bottom: 2px solid var(--primary-maroon);
+}
+
+/* Custom Checkbox (Circular style) */
+.custom-checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    color: #666;
+    user-select: none;
+}
+
+.custom-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    border: 1px solid #AAA;
+    border-radius: 50%; /* Makes it a circle */
+}
+
+.custom-checkbox-container:hover input ~ .checkmark {
+    border-color: var(--primary-gold);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox-container .checkmark:after {
+    left: 50%;
+    top: 50%;
+    transform: translate(-45%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-gold); /* The yellow dot */
+}
+
+/* Submit Button */
+.submit-wrapper {
+    /* margin-top: 40px; */
+    position: relative;
+    bottom: -28px; /* Pushes button slightly outside the bottom border */
+}
+
+.btn-submit {
+    background-color: var(--primary-maroon);
+    color: white;
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    padding: 12px 60px;
+    border-radius: 50px;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+    background-color: #4a1823;
+    color: white;
+    transform: translateY(-2px);
+    transition: all 0.2s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .form-box-container {
+        border-radius: 30px;
+        padding: 40px 20px 0px 20px;
+    }
+    
+    .form-title {
+        font-size: 1.6rem;
+    }
+    
+    .submit-wrapper {
+        bottom: -28px;
+    }
+}
+
+
+
+/* About Section Styling */
+.about-section {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Paragraph Text Styling (Georgia) */
+.bio-content p {
+    font-family: var(--body-font); /* Georgia */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Bio Image Pill Shape & Border */
+.bio-pill-image {
+    border: 10px solid #EFEFEF; /* Requested 10px border */
+    border-radius: 150px; /* Creates the capsule/pill shape */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Tagline Styling (Maroon, Bold, Italic) */
+.bio-tagline {
+    color: var(--primary-maroon);
+    font-family: var(--body-font); /* Georgia */
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+/* Responsive Ordering */
+@media (max-width: 991px) {
+    .bio-content {
+        text-align: left;
+    }
+    
+    .bio-tagline {
+        font-size: 1.2rem;
+        margin-top: 15px;
+        padding-bottom: 40px;
+    }
+
+    .bio-pill-image {
+        border-radius: 100px; /* Slightly less aggressive radius for mobile */
+    }
+}
+
+
+
+/* Issues Section Styling */
+.issues-section {
+    background-color: #F5F5F5; /* Requested section BG */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Main "ISSUES" Title */
+.issues-main-title {
+    font-family: var(--heading-font); /* Oswald */
+    color: var(--primary-gold); /* #C9A872 */
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+/* Individual Issue Headings */
+.issue-heading {
+    font-family: var(--heading-font); /* Oswald */
+    color: var(--primary-maroon); /* #652130 */
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Issue Description Text */
+.issue-text {
+    font-family: var(--body-font); /* Georgia */
+    color: #575757; /* Requested gray text */
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991px) {
+    .issues-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .issue-heading {
+        font-size: 1.4rem;
+        text-align: left;
+    }
+
+    .issue-text {
+        text-align: left;
+    }
+    
+    .issues-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+
+/* Election Day Section Styling */
+.election-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #ffffff;
+}
+
+.election-heading {
+    font-family: var(--heading-font); /* Oswald */
+    color: var(--primary-maroon); /* #652130 */
+    font-size: 5rem; /* Extra large heading */
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer Styling */
+.footer-copy {
+    font-family: var(--body-font); /* Georgia */
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991px) {
+    .election-heading {
+        font-size: 3rem; /* Scaled down for mobile while remaining "Big" */
+    }
+    
+    .election-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .election-heading {
+        font-size: 2.2rem; /* Ensure it doesn't overflow on very small screens */
+    }
+}
